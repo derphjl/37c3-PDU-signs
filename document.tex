@@ -1,0 +1,118 @@
+% LaTeX for PDU Signage, 37c3 specific design as per Styleguide 
+
+% --------------------------------------------
+% General Settings and Preamble
+% --------------------------------------------
+
+\documentclass[a5paper, landscape, twocolumn]{article}
+	% Set general properties of the document like size, orientation and font size (default is 10pt)
+	% Options like general columns and two-sidedness would also belong here.
+	% The preamble starts here and ends at the document begin command, right ahead of "\begin{document}"
+
+\usepackage{fontspec}
+
+\setsansfont{Mona Sans}[Scale=MatchLowercase]
+\setmonofont{VCR OSD Mono}
+%\newfontfamily\mainheading{VCR OSD Mono}[Scale=10]
+	% Not setting the main font but sans and mono will make it really obvious if a part of the document is not specifically set in either
+
+\newcommand{\pdunumber}{999}
+
+\newcommand{\scalefaq}{1.2}
+
+\usepackage[margin=10mm]{geometry}
+	
+%\setlength{\textwidth}{200mm}
+%\setlength{\textheight}{130mm}
+	% Specify the width of the entire text block
+	% When not using geometry, this floats attached to the standard margins on the top left corner. Not very useful.
+
+\setlength{\columnsep}{1mm}
+	% For two column mode, set separation between columns
+
+\pdfpageheight=\paperheight
+\pdfpagewidth=\paperwidth
+	% For some engines: Set the print area to be equal to the paper size. 
+	% Not all engines do this automatically.
+
+% --------------------------------------------
+% Style and Graphics
+% --------------------------------------------
+
+\usepackage{color}
+\pagecolor{black}
+\color{white}
+	% Make use of the color package, for example setting the whole page to white on black
+
+\usepackage{graphicx} 
+%\graphicspath{ {pix/} {../pix/} }
+	% Use graphics. Optionally: Set the path for graphics here and just use "\includegraphics{filename}" later.
+	% Alternatively, do not use "\graphicspath{}" and always address graphics by relative or absolute path.
+	% Usable extensions are, in order: .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2
+
+%\AtBeginDocument{code}
+	% This code will run at \begin{document}, as last part of the preamble
+
+\begin{document}
+	% The preamble ends here, as the document begins.
+	% Some commands need to be inside the document, so after preamble.
+
+%\setmainfont{./fonts/VCR_OSD_MONO.ttf}
+	% TrueType Fonts. Note: This *must* be rendered using XeLaTeX, as this is engine-specific stuff. 
+	% Standard LaTeX is very limited in font selection and does not support True Type Import
+
+%\newfontface\vcrmono{./fonts/VCR_OSD_MONO.otf}
+
+
+% --------------------------------------------
+% Document content
+% --------------------------------------------
+
+
+
+%%^^A%%  fontspec-example.tex -- part of FONTSPEC <wspr.io/fontspec>
+
+
+
+\pagestyle{empty}
+
+\begin{center}
+\scalebox{2.6}{\texttt{PDU \scalebox{4}{\pdunumber}}}
+\end{center}
+
+%\vspace{1mm}
+
+\begin {itemize}
+
+\item\scalebox{\scalefaq}{{\textsf{What is a} \texttt{PDU} \textsf{and why does it have a sign?}}}
+
+\textsf{\texttt{PDU} \textsf{=} \texttt{P}\textsf{ower} \texttt{D}\textsf{istribution} \texttt{U}\textsf{nit}\\We, the power team, are responsible for delivering safe and plentiful power to all participants of this event so everyone can power their gadgets, charge their computers and phones, etc.}
+
+\item\scalebox{\scalefaq}{{\textsf{Can I plug in my device or should i ask first?}}}
+
+\textsf{For any common device, feel free to plug right in. Keep in mind that the number of outlets we can provide is limited. If all outlets are already in use, think about sharing with your neighbours, using plug strips for example. If you are not sure about the safety of your device or have any other questions, don't hesitate to ask via our ticket system. You can find the ticket system via the QR Code or URL on this sign.}
+
+\item\scalebox{\scalefaq}{{\textsf{I am not receiving power, what can I do?}}}
+
+\textsf{Most commonly, this means that the RCD was tripped by a faulty device connected to this PDU. You may reset the RCD once or twice to rectify this fault or identify the faulty device. However, if the fault is not immediately obvious, please refrain from further analysis without consulting the power team. That is what we are here for, after all :)}
+
+\newpage
+
+\item\scalebox{\scalefaq}{{\textsf{Any quicker way to get in touch?}}}
+
+\textsf{In case of urgent problems or need for power advice; please don't be afraid to call. We set up a call group, so you can call \underline{the whole team at once}. Whoever is on call right now will see to your problem asap. The DECT extension is:}
+
+\begin{center}
+\scalebox{3.5}{\texttt{POWR (7697)}} \\
+\vspace{7mm}
+\includegraphics[scale=0.3]{./qr/\pdunumber.png} \\
+\textsf{Find our ticket system by using the QR code. \\
+\vspace{1mm}
+\scalebox{1.2}{\texttt{https://pdu.c3power.de}}}
+\end{center}
+
+\end{itemize}
+
+
+
+\end{document}
