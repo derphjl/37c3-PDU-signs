@@ -11,8 +11,9 @@
 
 \usepackage{fontspec}
 
-\setsansfont{Mona Sans}[Scale=MatchLowercase]
-\setmonofont{VCR OSD Mono}
+%\setsansfont{Mona Sans}[Scale=MatchLowercase]
+\setsansfont{Red Hat Text}[Scale=MatchLowercase]
+\setmonofont{IBM 3270}
 %\newfontfamily\mainheading{VCR OSD Mono}[Scale=10]
 	% Not setting the main font but sans and mono will make it really obvious if a part of the document is not specifically set in either
 
@@ -39,9 +40,9 @@
 % Style and Graphics
 % --------------------------------------------
 
-\usepackage{color}
-\pagecolor{black}
-\color{white}
+%\usepackage{color}
+%\pagecolor{black}
+%\color{white}
 	% Make use of the color package, for example setting the whole page to white on black
 
 \usepackage{graphicx} 
@@ -77,16 +78,16 @@
 \pagestyle{empty}
 
 \begin{center}
-\scalebox{2.6}{\texttt{PDU \scalebox{4}{\pdunumber}}}
+\scalebox{2}{\texttt{PDU \scalebox{5.5}{\pdunumber}}}
 \end{center}
 
 %\vspace{1mm}
 
 \begin {itemize}
 
-\item\scalebox{\scalefaq}{{\textsf{What is a} \texttt{PDU} \textsf{and why does it have a sign?}}}
+\item\scalebox{\scalefaq}{{\textsf{What is a PDU?}}}
 
-\textsf{\texttt{PDU} \textsf{=} \texttt{P}\textsf{ower} \texttt{D}\textsf{istribution} \texttt{U}\textsf{nit}\\We, the power team, are responsible for delivering safe and plentiful power to all participants of this event so everyone can power their gadgets, charge their computers and phones, etc.}
+\textsf{PDU = Power Distribution Unit\\We, the power team, are responsible for delivering safe and plentiful power to all participants of this event so everyone can power their gadgets, charge their computers and phones, etc.}
 
 \item\scalebox{\scalefaq}{{\textsf{Can I plug in my device or should i ask first?}}}
 
